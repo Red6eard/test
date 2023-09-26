@@ -1,6 +1,14 @@
 
+//работа с объектами.
 
-const newPerson = {
+
+//дан шаблон объекта, сделать так чтобы из шаблона 
+//получалась копия с данными получеными из инпутов со страницы
+// и новый объект выводился на экран
+
+
+// шаблон объекта:
+const personTemplate = {
   id: 00000,
   fullName: {
     firstName: "firstName",
@@ -19,14 +27,16 @@ const newPerson = {
   married: true
 };
 
-console.log(newPerson);
+console.log(personTemplate);
 
-
+// функция клонирования и вставки новых значений из инпутов
 const updatePerson = (obj) => {
-  const pers = JSON.parse(JSON.stringify(obj));
+  const pers = JSON.parse(JSON.stringify(obj));//клонируем объект
   pers.id += 1;
   pers.fullName.firstName = "Vadim";
   return pers
 };
 
-console.log(updatePerson(newPerson));
+const newPerson = updatePerson(personTemplate);
+
+console.log(newPerson);
