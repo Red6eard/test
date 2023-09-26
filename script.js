@@ -24,6 +24,7 @@ console.log(newPerson);
 
 const updatePerson = (obj) => {
   const pers1 = JSON.parse(JSON.stringify(obj));
+  pers1.id += 1;
   pers1.fullName.firstName = "Vadim";
   return pers1
 };
