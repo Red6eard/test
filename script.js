@@ -29,6 +29,17 @@ const personTemplate = {
 
 console.log(personTemplate);
 
+
+// получаем доступ к инпутам и кнопке
+const firstNameInput = document.getElementById('firstNameInput');
+const lastNameInput = document.getElementById('lastNameInput');
+const surnameInput = document.getElementById('surnameInput');
+const sendButton = document.getElementById('sendButton');
+
+
+
+console.log(sendButton);
+
 // функция клонирования и вставки новых значений из инпутов
 const updatePerson = (obj) => {
   const pers = JSON.parse(JSON.stringify(obj));//клонируем объект
