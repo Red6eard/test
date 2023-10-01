@@ -7,7 +7,7 @@
 // и новый объект выводился на экран
 
 
-// шаблон объекта:
+// *************шаблон объекта:
 const personTemplate = {
   id: 00000,
   fullName: {
@@ -30,7 +30,7 @@ const personTemplate = {
 console.log(personTemplate);
 
 
-// получаем доступ к инпутам и кнопке
+// ******получаем доступ к инпутам и кнопке
 const firstNameInput = document.getElementById('firstNameInput');
 const lastNameInput = document.getElementById('lastNameInput');
 const surnameInput = document.getElementById('surnameInput');
@@ -38,16 +38,38 @@ const sendButton = document.getElementById('sendButton');
 
 
 
-console.log(sendButton);
+
+
+
+
+//функция получения данных из инпутов
+const getDataFromInput = (input) => {
+  const data = input.value;
+  return data;
+};
+const data = getDataFromInput(firstNameInput)
+console.log(data);
+
+
+
+
+//******************************* */
+
+
+
+sendButton.addEventListener('click', getDataFromInput(firstNameInput));
+
+
+
+
 
 // функция клонирования и вставки новых значений из инпутов
-const updatePerson = (obj) => {
+const updatePerson = (obj, vaiue ) => {
   const pers = JSON.parse(JSON.stringify(obj));//клонируем объект
   pers.id += 1;
-  pers.fullName.firstName = "Vadim";
+  pers.fullName.firstName = vaiue;
   return pers
 };
 
-const newPerson = updatePerson(personTemplate);
-
+const newPerson = updatePerson(personTemplate, getDataFromInput(firstNameInput));
 console.log(newPerson);
